@@ -1,0 +1,39 @@
+<div class="container">
+  
+    <div>
+      <h1>Login</h1>
+    </div>
+  
+    <div>
+      <form #form="ngForm" autocomplete="off" class="example-container">
+        <mat-form-field>
+          <input matInput required placeholder="Input" minlength="3" [(ngModel)]="usuario.username" name="username" placeholder="username">
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>password</mat-label>
+            <input matInput [type]="hide ? 'password' : 'text'">
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+        </mat-form-field>
+
+    </form>
+    <button mat-raised-button [disabled]="form.invalid" (click)="logar()" class="login">Login</button>
+    <!-- <button mat-raised-button color="primary" routerLink="/pessoas">Voltar Pesquisa</button> -->
+    </div>
+
+    <div>
+        <h3>Usuários</h3>
+    </div>
+    <div>
+        <p>usuário: guest1</p>
+        <p>password: guest1</p>
+    </div>
+    <br>
+    <div>
+        <p>usuário: guest2</p>
+        <p>password: guest2</p>
+    </div>
+
+  </div>

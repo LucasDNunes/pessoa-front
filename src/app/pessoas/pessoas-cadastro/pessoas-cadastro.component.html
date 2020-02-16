@@ -1,0 +1,49 @@
+<div class="container">
+  
+    <div>
+      <h1>{{editando? 'Edição de ' : 'Cadastrar'}} {{entidade}}</h1>
+    </div>
+  
+    <div>
+      <form #form="ngForm" autocomplete="off" class="example-container">
+        <mat-form-field>
+          <input matInput required placeholder="Input" minlength="3" [(ngModel)]="pessoa.nome" name="nome" placeholder="Nome">
+          <mat-error>Mínimo de 3 caracteres</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Sexo</mat-label>
+            <mat-select required name="sexo" [(ngModel)]="pessoa.sexo">
+                <mat-option *ngFor="let sexo of sexos" [value]="sexo.value">
+                {{sexo.viewValue}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Escolha uma data</mat-label>
+            <input matInput [matDatepicker]="myDatepicker" #pickerInput required [(ngModel)]="pessoa.dataNascimento" name="dataNascimento">
+            <mat-datepicker-toggle matSuffix [for]="myDatepicker"></mat-datepicker-toggle>
+            <mat-datepicker #myDatepicker></mat-datepicker>
+        </mat-form-field>
+       
+        <mat-form-field>
+            <mat-label>Email</mat-label>
+            <input matInput placeholder="pat@exemplo.com" [formControl]="email" [(ngModel)]="pessoa.email" name="naturalidade">
+            <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="Input" [(ngModel)]="pessoa.naturalidade" name="naturalidade" placeholder="Naturalidade">
+        </mat-form-field>
+        
+        <mat-form-field>
+            <input matInput required placeholder="Input" minlength="11" [(ngModel)]="pessoa.cpf" name="nome" placeholder="CPF">
+            <mat-error>informa um cpf válido</mat-error>
+        </mat-form-field>
+
+    </form>
+    <button mat-raised-button [disabled]="form.invalid" (click)="salvar()" class="cadastro">{{editando? 'Salvar ' : 'Cadastrar'}}</button>
+    <button mat-raised-button color="primary" routerLink="/pessoas">Voltar Pesquisa</button>
+    </div>
+  </div>

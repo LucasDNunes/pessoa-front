@@ -1,0 +1,17 @@
+.example-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.example-container {
+    width: 50%;
+}
+
+button{
+    margin: 1%;
+}
+
+.cadastro{
+    background-color: rgb(83, 172, 91);
+    color: white;
+}
