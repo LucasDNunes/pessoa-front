@@ -25,7 +25,7 @@ import { LoginModule } from './login/login.module';
 
 
 const rotas: Routes = [
-  { path: '', redirectTo:'pessoas', pathMatch:'full'},
+  { path: '', redirectTo:'login', pathMatch:'full'},
   { path: 'pessoas',  component: PessoasPesquisaComponent},
   { path: 'pessoas/novo',  component: PessoasCadastroComponent},
   { path: 'pessoas/:id',  component: PessoasCadastroComponent},

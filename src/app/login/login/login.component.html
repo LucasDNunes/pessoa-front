@@ -12,7 +12,7 @@
 
         <mat-form-field>
             <mat-label>password</mat-label>
-            <input matInput [type]="hide ? 'password' : 'text'">
+            <input matInput [type]="hide ? 'password' : 'text'" [(ngModel)]="usuario.password" name="password">
             <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
             <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
             </button>
@@ -31,9 +31,9 @@
         <p>password: guest1</p>
     </div>
     <br>
-    <div>
+    <!-- <div>
         <p>usuário: guest2</p>
         <p>password: guest2</p>
-    </div>
+    </div> -->
 
   </div>

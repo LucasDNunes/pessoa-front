@@ -41,7 +41,9 @@ export class PessoasPesquisaComponent implements OnInit {
   }
 
   listar() {
-    this.service.listar();
+    this.service.listar().then(dados => {
+      this.dataSource = new MatTableDataSource(dados['content']);
+    });
   }
 
   deletar(pessoa: Pessoa): void {

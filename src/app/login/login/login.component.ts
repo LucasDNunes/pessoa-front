@@ -29,6 +29,8 @@ export class LoginComponent implements OnInit {
   logar(){
     this.service.logar(this.usuario).then(dados => {
       if (dados) {
+        localStorage.setItem('user', this.usuario.username);
+        localStorage.setItem('password', this.usuario.password);
         this.router.navigate(['/pessoas']);
       }
     }).catch(erro => {
