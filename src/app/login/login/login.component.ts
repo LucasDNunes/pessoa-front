@@ -28,12 +28,14 @@ export class LoginComponent implements OnInit {
 
   logar(){
     this.service.logar(this.usuario).then(dados => {
+      debugger
       if (dados) {
         localStorage.setItem('user', this.usuario.username);
         localStorage.setItem('password', this.usuario.password);
         this.router.navigate(['/pessoas']);
       }
     }).catch(erro => {
+      debugger
       this.snackBar.open(erro.error.message, 'fechar', {
         duration: 5000
       });

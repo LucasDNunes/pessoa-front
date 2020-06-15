@@ -25,7 +25,7 @@ import { MatConfirmDialogComponent } from 'src/app/mat-confirm-dialog/mat-confir
 export class PessoasPesquisaComponent implements OnInit {
 
   Entidade = 'Pessoa';
-  columnsToDisplay: string[] = ['nome', 'sexo', 'email', 'dataNascimento', 'naturalidade', 'cpf'];
+  columnsToDisplay: string[] = ['nome', 'sexo', 'email', 'dataNascimento', 'naturalidade', 'cpf', 'telefone', 'endereco'];
   expandedElement: Pessoa | null;
   dataSource = null;
   excluir = false;

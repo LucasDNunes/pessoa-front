@@ -123,5 +123,8 @@
       }
     }
   },
-  "defaultProject": "pessoa"
+  "defaultProject": "pessoa",
+  "cli": {
+    "analytics": "b19a5f33-eada-4225-8bd3-0ba86dc82dd8"
+  }
 }

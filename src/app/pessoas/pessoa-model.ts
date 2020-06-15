@@ -6,4 +6,6 @@ export class Pessoa {
     dataNascimento: string;
     naturalidade: string;
     cpf: string;
+    telefone: number;
+    endereco: string;
 }
