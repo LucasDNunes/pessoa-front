@@ -5,6 +5,7 @@ export class Pessoa {
     email: string;
     dataNascimento: string;
     naturalidade: string;
+    nascionalidade: string;
     cpf: string;
     telefone: number;
     endereco: string;

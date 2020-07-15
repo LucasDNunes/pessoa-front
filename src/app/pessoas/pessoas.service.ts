@@ -49,10 +49,10 @@ export class PessoasService {
   }
 
   getToken(): string {
-    let user = 'user';
-    if (localStorage.getItem(user) && localStorage.getItem(user) == 'guest1') {
-      return 'Basic Z3Vlc3QxOmd1ZXN0MQ=='
+    let user = 'token';
+    if (localStorage.getItem(user)) {
+      return 'Bearer ' + localStorage.getItem(user);
     }
-    return'Basic Z3Vlc3QyOmd1ZXN0Mg==';
+    return null;
   }
 }

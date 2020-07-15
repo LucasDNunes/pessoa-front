@@ -36,21 +36,24 @@
         <mat-form-field>
             <input matInput placeholder="Input" [(ngModel)]="pessoa.naturalidade" name="naturalidade" placeholder="Naturalidade">
         </mat-form-field>
+
+        <mat-form-field>
+          <input matInput placeholder="Input" [(ngModel)]="pessoa.nascionalidade" name="nascionalidade" placeholder="Nascionalidade">
+      </mat-form-field>
         
         <mat-form-field>
             <input matInput required placeholder="Input" minlength="11" [(ngModel)]="pessoa.cpf" name="nome" placeholder="CPF">
             <mat-error>informa um cpf válido</mat-error>
         </mat-form-field>
+        <a href="https://www.4devs.com.br/gerador_de_cpf" target="_blank"> site para gerar cpf de teste</a>
         
-        <mat-form-field>
+        <!-- <mat-form-field>
           <input matInput placeholder="Input" [(ngModel)]="pessoa.endereco" name="endereco" placeholder="Endereco">
         </mat-form-field>
-        {{pessoa.endereco}}
 
         <mat-form-field>
           <input matInput type="number" placeholder="Input" [(ngModel)]="pessoa.telefone" name="telefone" placeholder="Telefone">
-        </mat-form-field>
-        {{pessoa.telefone}}
+        </mat-form-field> -->
 
     </form>
     <button mat-raised-button [disabled]="form.invalid" (click)="salvar()" class="cadastro">{{editando? 'Salvar ' : 'Cadastrar'}}</button>

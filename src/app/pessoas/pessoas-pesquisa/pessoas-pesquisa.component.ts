@@ -25,7 +25,7 @@ import { MatConfirmDialogComponent } from 'src/app/mat-confirm-dialog/mat-confir
 export class PessoasPesquisaComponent implements OnInit {
 
   Entidade = 'Pessoa';
-  columnsToDisplay: string[] = ['nome', 'sexo', 'email', 'dataNascimento', 'naturalidade', 'cpf', 'telefone', 'endereco'];
+  columnsToDisplay: string[] = ['nome', 'sexo', 'email', 'dataNascimento', 'naturalidade','nascionalidade', 'cpf', ];
   expandedElement: Pessoa | null;
   dataSource = null;
   excluir = false;
@@ -43,6 +43,8 @@ export class PessoasPesquisaComponent implements OnInit {
   listar() {
     this.service.listar().then(dados => {
       this.dataSource = new MatTableDataSource(dados['content']);
+    }).catch(err =>{
+      console.log(err);
     });
   }
 
